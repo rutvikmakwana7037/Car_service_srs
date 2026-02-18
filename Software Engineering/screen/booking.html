@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Car Service Booking</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            min-height: 100vh;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center p-4">
+
+    <div class="glass-card w-full max-auto max-w-2xl rounded-3xl shadow-2xl p-8 text-white">
+        <div class="mb-8">
+            <h2 class="text-3xl font-bold bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent">
+                Book Your Service
+            </h2>
+            <p class="text-slate-400 text-sm mt-2">Schedule a maintenance check for your vehicle in seconds.</p>
+        </div>
+
+        <form action="#" class="space-y-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <label class="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2 ml-1">Vehicle Model</label>
+                    <select class="w-full bg-slate-800/50 border border-slate-700 rounded-xl px-4 py-3 focus:ring-2 focus:ring-blue-500 outline-none transition-all">
+                        <option>Hyundai Creta</option>
+                        <option>Hyundai Palisade</option>
+                        <option>Suzuki Swift</option>
+                        <option>Other / Custom</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2 ml-1">Registration Number</label>
+                    <input type="text" placeholder="e.g. GJ-03-XX-1234" class="w-full bg-slate-800/50 border border-slate-700 rounded-xl px-4 py-3 focus:ring-2 focus:ring-blue-500 outline-none transition-all placeholder:text-slate-600">
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <label class="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2 ml-1">Service Category</label>
+                    <select class="w-full bg-slate-800/50 border border-slate-700 rounded-xl px-4 py-3 focus:ring-2 focus:ring-blue-500 outline-none transition-all">
+                        <option>Standard Maintenance</option>
+                        <option>Deep Cleaning & Detail</option>
+                        <option>Brake & Suspension</option>
+                        <option>Engine Diagnostics</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2 ml-1">Preferred Date</label>
+                    <input type="date" class="w-full bg-slate-800/50 border border-slate-700 rounded-xl px-4 py-3 focus:ring-2 focus:ring-blue-500 outline-none transition-all">
+                </div>
+            </div>
+
+            <div>
+                <label class="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2 ml-1">Additional Complaints</label>
+                <textarea rows="3" placeholder="Describe any specific issues (e.g., unusual noise from brakes...)" class="w-full bg-slate-800/50 border border-slate-700 rounded-xl px-4 py-3 focus:ring-2 focus:ring-blue-500 outline-none transition-all placeholder:text-slate-600"></textarea>
+            </div>
+
+            <div class="flex items-center gap-3 p-4 bg-blue-500/10 rounded-xl border border-blue-500/20">
+                <input type="checkbox" id="pickup" class="w-5 h-5 accent-blue-500 cursor-pointer">
+                <label for="pickup" class="text-sm cursor-pointer select-none">
+                    <span class="font-bold text-blue-400">Doorstep Pickup:</span> I want a technician to collect my car from my location.
+                </label>
+            </div>
+
+            <button type="submit" class="w-full bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-500 hover:to-blue-400 text-white font-bold py-4 rounded-xl shadow-lg shadow-blue-500/20 transform active:scale-[0.98] transition-all">
+                Confirm Booking
+            </button>
+        </form>
+    </div>
+
+</body>
+</html>

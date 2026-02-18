@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicle Health</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); min-height: 100vh; }
+        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); }
+    </style>
+</head>
+<body class="p-6 md:p-10 text-slate-100 font-sans">
+
+    <div class="max-w-6xl mx-auto">
+        <header class="mb-10">
+            <h1 class="text-3xl font-black text-white">Vehicle Analytics</h1>
+            <p class="text-slate-400">Automated health report for <span class="text-blue-400 font-bold">GJ-03-XX-1234</span></p>
+        </header>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            
+            <div class="glass p-8 rounded-3xl flex flex-col items-center justify-center text-center">
+                <p class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-4">Overall Health Score</p>
+                <div class="relative flex items-center justify-center">
+                    <svg class="w-32 h-32 transform -rotate-90">
+                        <circle cx="64" cy="64" r="58" stroke="currentColor" stroke-width="8" fill="transparent" class="text-slate-800" />
+                        <circle cx="64" cy="64" r="58" stroke="currentColor" stroke-width="8" fill="transparent" stroke-dasharray="364.4" stroke-dashoffset="54.6" class="text-emerald-500" />
+                    </svg>
+                    <span class="absolute text-3xl font-black text-white">85%</span>
+                </div>
+                <p class="mt-4 text-emerald-400 text-sm font-medium">Excellent Condition</p>
+            </div>
+
+            <div class="glass p-8 rounded-3xl col-span-1 md:col-span-2">
+                <h3 class="text-sm font-bold text-slate-500 uppercase tracking-widest mb-6">Predictive Maintenance</h3>
+                <div class="space-y-6">
+                    <div>
+                        <div class="flex justify-between text-sm mb-2">
+                            <span>Brake Pad Life</span>
+                            <span class="text-orange-400">4,200 km remaining</span>
+                        </div>
+                        <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
+                            <div class="bg-orange-500 h-full w-[40%]"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-sm mb-2">
+                            <span>Engine Oil Longevity</span>
+                            <span class="text-emerald-400">8,500 km remaining</span>
+                        </div>
+                        <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
+                            <div class="bg-emerald-500 h-full w-[80%]"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-sm mb-2">
+                            <span>Battery Voltage</span>
+                            <span class="text-blue-400">12.6V (Optimal)</span>
+                        </div>
+                        <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
+                            <div class="bg-blue-500 h-full w-[95%]"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="glass p-8 rounded-3xl col-span-1 md:col-span-3">
+                <h3 class="text-sm font-bold text-slate-500 uppercase tracking-widest mb-6">Service Cost Trends (Last 12 Months)</h3>
+                <div class="flex items-end justify-between h-40 gap-2">
+                    <div class="w-full bg-blue-500/20 rounded-t-lg h-[20%]"></div>
+                    <div class="w-full bg-blue-500/20 rounded-t-lg h-[40%]"></div>
+                    <div class="w-full bg-blue-500/20 rounded-t-lg h-[15%]"></div>
+                    <div class="w-full bg-blue-500 rounded-t-lg h-[85%] relative">
+                        <span class="absolute -top-8 left-1/2 -translate-x-1/2 text-xs font-bold text-blue-400">Major Service</span>
+                    </div>
+                    <div class="w-full bg-blue-500/20 rounded-t-lg h-[30%]"></div>
+                    <div class="w-full bg-blue-500/20 rounded-t-lg h-[25%]"></div>
+                </div>
+                <div class="flex justify-between mt-4 text-[10px] text-slate-500 font-bold uppercase">
+                    <span>Aug</span><span>Sep</span><span>Oct</span><span>Nov</span><span>Dec</span><span>Jan</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-8 text-center text-slate-500 text-xs italic">
+            Dashboard data is automatically updated every 24 hours based on diagnostic logs.
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Live Status</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); min-height: 100vh; }
+        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .pulse-blue { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.7); animation: pulse 2s infinite; }
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(59, 130, 246, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(59, 130, 246, 0); }
+        }
+    </style>
+</head>
+<body class="p-6 md:p-12 text-slate-100">
+
+    <div class="max-w-3xl mx-auto">
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-10 gap-4">
+            <div>
+                <h1 class="text-3xl font-black tracking-tight text-white">Service Status</h1>
+                <p class="text-blue-400 font-mono text-sm mt-1 uppercase">Job ID: #FRL-992834</p>
+            </div>
+            <div class="glass px-6 py-3 rounded-2xl flex items-center gap-4">
+                <div class="text-right">
+                    <p class="text-xs text-slate-400 font-bold uppercase">Your Vehicle</p>
+                    <p class="text-lg font-bold">Hyundai Creta <span class="text-slate-500 text-sm font-normal">| GJ-03</span></p>
+                </div>
+                <div class="w-12 h-12 bg-blue-500/20 rounded-full flex items-center justify-center text-blue-400 text-xl font-bold">H</div>
+            </div>
+        </div>
+
+        <div class="glass rounded-3xl p-8 md:p-12 relative overflow-hidden">
+            <div class="absolute top-0 right-0 p-8 opacity-10">
+                <svg width="120" height="120" fill="currentColor" viewBox="0 0 24 24"><path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z"/></svg>
+            </div>
+
+            <div class="relative z-10 space-y-12">
+                <div class="flex gap-6 relative">
+                    <div class="absolute left-4 top-10 w-0.5 h-12 bg-green-500/50"></div>
+                    <div class="w-8 h-8 rounded-full bg-green-500 flex items-center justify-center text-white shrink-0">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-white">Vehicle Check-in</h3>
+                        <p class="text-slate-400 text-sm">Completed today at 09:15 AM</p>
+                    </div>
+                </div>
+
+                <div class="flex gap-6 relative">
+                    <div class="absolute left-4 top-10 w-0.5 h-12 bg-slate-700"></div>
+                    <div class="w-8 h-8 rounded-full bg-blue-600 pulse-blue flex items-center justify-center text-white shrink-0 z-10">
+                        <div class="w-2 h-2 bg-white rounded-full"></div>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-blue-400">Mechanical Work</h3>
+                        <p class="text-slate-200 text-sm">Technician is currently changing the oil and filters.</p>
+                        <div class="mt-4 bg-slate-800/80 rounded-xl p-3 inline-flex items-center gap-3">
+                            <span class="text-xs bg-blue-500/20 text-blue-300 px-2 py-1 rounded">Bay #04</span>
+                            <span class="text-xs text-slate-400">Est. Finish: 11:45 AM</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex gap-6 relative opacity-30">
+                    <div class="absolute left-4 top-10 w-0.5 h-12 bg-slate-700"></div>
+                    <div class="w-8 h-8 rounded-full border-2 border-slate-600 shrink-0"></div>
+                    <div>
+                        <h3 class="text-lg font-bold">Washing & Detailing</h3>
+                        <p class="text-sm">Deep foam wash and interior vacuuming.</p>
+                    </div>
+                </div>
+
+                <div class="flex gap-6 relative opacity-30">
+                    <div class="w-8 h-8 rounded-full border-2 border-slate-600 shrink-0"></div>
+                    <div>
+                        <h3 class="text-lg font-bold">Quality Inspection</h3>
+                        <p class="text-sm">Final road test and system diagnostic check.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-8 flex justify-center">
+            <button class="bg-slate-800 hover:bg-slate-700 text-slate-300 px-6 py-3 rounded-2xl text-sm font-medium transition-all border border-slate-700">
+                Contact Service Advisor
+            </button>
+        </div>
+    </div>
+
+</body>
+</html>
